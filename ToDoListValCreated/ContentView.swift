@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Query var toDos: [ToDoItem]
     var body: some View {
         VStack {
             HStack {
@@ -25,10 +27,17 @@ struct ContentView: View {
             }
             .padding()
             Spacer()
-        }
-        .padding()
-    }//end body
-}//end struct
+            List {
+                    ForEach (toDos) { toDoItem in
+                            Text(toDoItem.title)
+                        }
+                    }
+                }
+            }
+//        .padding()
+        }//end body
+    //end struct
+
 
 #Preview {
     ContentView()

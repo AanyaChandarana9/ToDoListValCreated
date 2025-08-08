@@ -6,12 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
-struct ToDoListValCreatedApp: App {
+struct ToDoList: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-        }
-    }
-}
+                .modelContainer(for: ToDoItem.self)
+//            @main
+//            struct ToDoListValCreatedApp: App {
+//                var body: some Scene {
+//                    WindowGroup {
+//                        ContentView()
+                    }
+                }
+            }
+//        }
+//    }
+//}
