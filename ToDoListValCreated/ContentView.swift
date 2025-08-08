@@ -30,15 +30,19 @@ struct ContentView: View {
             List {
                     ForEach (toDos) { toDoItem in
                             Text(toDoItem.title)
+                       
+                        }
                         }
                     }
                 }
             }
 //        .padding()
-        }//end body
+        //end body
     //end struct
 
 
 #Preview {
     ContentView()
-}
+            .modelContainer(for: ToDoItem.self, inMemory: true)
+    }
+
